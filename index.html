@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Set-Cookie</title>
+		<style>
+			.footer {
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				background-color: #eeeeee;
+				color: black;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Play around with HTTP cookies and the Set-Cookie HTTP header:</h1>
+		<p>
+			This is: <span id="window_location"></span><br/>
+			<script>window_location.innerText = window.location;</script>
+			Visit: set-cookie.info | <a href="http://sub1.set-cookie.info/">sub1.set-cookie.info</a> | <a href="http://sub2.set-cookie.info/">sub2.set-cookie.info</a><br/>
+			Subdirectories of set-cookie.info: <a href="dir1">dir1</a> | <a href="dir2">dir2</a>
+		</p>
+		<p>
+			Cookies available through <b>JavaScript</b> (<tt>document.cookie</tt>):<br/>
+			<textarea readonly style="background-color: lightgray;" id="js_cookies_textarea" rows="5" cols="100"></textarea>
+			<script>js_cookies_textarea.value = document.cookie</script>
+		</p>
+		<p>
+			Cookies the client sent in its <b>HTTP</b> request:<br/>
+			<textarea readonly style="background-color: lightgray;" id="http_cookies_textarea" rows="5" cols="100"></textarea>
+		</p>
+		<p>
+			<form action="" method="POST">
+				Set cookie:<br/>
+				<textarea id="cookie" name="cookie" rows="5" cols="100"></textarea><br/>
+				<input type="submit" value="Set cookie!" />
+			</form>
+		</p>
+		<p>
+			Examples:<br/>
+			<ul>
+				<li><tt>Set−Cookie: FOO=BAR</tt></li>
+				<li><tt>Set−Cookie: FOO=BAR; Domain=set-cookie.info</tt></li>
+				<li><tt>Set−Cookie: FOO=BAR; Path=/dir1/</tt></li>
+				<li><tt>Set−Cookie: FOO=BAR; Path=/dir2/</tt></li>
+				<li><tt>Set−Cookie: FOO=BAR; HttpOnly</tt></li>
+				<li><tt>Set−Cookie: FOO=BAR; Max-Age=5</tt></li>
+				<li><tt>Set−Cookie: FOO=BAR; Secure</tt></li>
+			</ul>
+		</p>
+
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<div class="footer" style="font-family:Arial,Helvetica,sans-serif;">
+  			<p>© 2023 Kendrick Grünberg | <a href="https://github.com/k-gruenberg/set-cookie.info">View source code</a> | See also: <a href="http://same-origin-policy.info">same-origin-policy.info</a> ; <a href="http://content-security-policy.info/">content-security-policy.info</a></p>
+		</div>
+	</body>
+</html>
