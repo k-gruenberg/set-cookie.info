@@ -1,6 +1,6 @@
 <?php
 	// Set cookie by sending "Set−Cookie" HTTP response header when the user submitted the corresponding POST request and when there is no XSRF:
-	if (isset($_POST["submit"]) && $_SERVER['HTTP_X_CSRF_Free'] === 'yes') {
+	if (isset($_POST["cookie"]) && $_SERVER['HTTP_X_CSRF_Free'] === 'yes') {
 		header("Set−Cookie: " . $_POST["cookie"]);
 	}
 ?>
@@ -56,6 +56,7 @@
 				// adapted from https://de.wikipedia.org/wiki/XMLHttpRequest#Codebeispiele_(JavaScript):
 				let method = 'POST';
 				let url = 'index.php';
+				let params = 'cookie=' + encodeURIComponent(cookie.value);
 				try {
 					var xmlHttp = new XMLHttpRequest();
 					if (xmlHttp) {
@@ -66,7 +67,7 @@
 								location.reload();
 							}
 						};
-						xmlHttp.send(null);
+						xmlHttp.send(params);
 					}
 				} catch(e) {
 					alert('XMLHttpRequest ' + method + ' ' + url + ' failed with error: ' + e);
