@@ -20,8 +20,16 @@
 		<p>
 			This is: <span id="window_location"></span><br/>
 			<script>window_location.innerText = window.location;</script>
-			Visit: set-cookie.info | <a href="http://sub1.set-cookie.info/">sub1.set-cookie.info</a> | <a href="http://sub2.set-cookie.info/">sub2.set-cookie.info</a><br/>
-			Subdirectories of set-cookie.info: <a href="dir1">dir1</a> | <a href="dir2">dir2</a>
+			Visit: <script>
+				let sub1 = window.location.toString().includes("sub1.set-cookie.info");
+				let sub2 = window.location.toString().includes("sub2.set-cookie.info");
+				document.write((!sub1 && !sub2) ? "set-cookie.info" : "<a href=\"http://set-cookie.info/\">set-cookie.info</a>");
+				document.write(" | ");
+				document.write(sub1 ? "sub1.set-cookie.info" : "<a href=\"http://sub1.set-cookie.info/\">sub1.set-cookie.info</a>");
+				document.write(" | ");
+				document.write(sub2 ? "sub2.set-cookie.info" : "<a href=\"http://sub2.set-cookie.info/\">sub2.set-cookie.info</a>");
+				</script><br/>
+			Subdirectories: <a href="dir1">dir1</a> | <a href="dir2">dir2</a>
 		</p>
 		<p>
 			Cookies available through <b>JavaScript</b> (<tt>document.cookie</tt>):<br/>
@@ -44,7 +52,7 @@
 			<ul>
 				<li><tt>Set−Cookie: FOO=BAR</tt></li>
 				<li><tt>Set−Cookie: FOO=BAR; Domain=set-cookie.info</tt><br/>
-				("Only the current domain can be set as the value, or a domain of a higher order, [...]. Setting the domain will make the cookie available to it, as well as to all its subdomains.")</li>
+				("Only the current domain can be set as the value, or a domain of a higher order, [...]. Setting the domain will make the cookie available to it, as well as to all its subdomains." &mdash; <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">developer.mozilla.org</a>)</li>
 				<li><tt>Set−Cookie: FOO=BAR; Path=/dir1/</tt></li>
 				<li><tt>Set−Cookie: FOO=BAR; HttpOnly</tt></li>
 				<li><tt>Set−Cookie: FOO=BAR; Max-Age=10</tt></li>
