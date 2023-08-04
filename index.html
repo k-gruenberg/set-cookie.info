@@ -40,14 +40,14 @@
 			</form>
 		</p>
 		<p>
-			Examples:<br/>
+			Examples (see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">developer.mozilla.org</a> for a full reference of the <tt>Set-Cookie</tt> HTTP header):<br/>
 			<ul>
 				<li><tt>Set−Cookie: FOO=BAR</tt></li>
-				<li><tt>Set−Cookie: FOO=BAR; Domain=set-cookie.info</tt></li>
+				<li><tt>Set−Cookie: FOO=BAR; Domain=set-cookie.info</tt><br/>
+				("Only the current domain can be set as the value, or a domain of a higher order, [...]. Setting the domain will make the cookie available to it, as well as to all its subdomains.")</li>
 				<li><tt>Set−Cookie: FOO=BAR; Path=/dir1/</tt></li>
-				<li><tt>Set−Cookie: FOO=BAR; Path=/dir2/</tt></li>
 				<li><tt>Set−Cookie: FOO=BAR; HttpOnly</tt></li>
-				<li><tt>Set−Cookie: FOO=BAR; Max-Age=5</tt></li>
+				<li><tt>Set−Cookie: FOO=BAR; Max-Age=10</tt></li>
 				<li><tt>Set−Cookie: FOO=BAR; Secure</tt></li>
 			</ul>
 		</p>
