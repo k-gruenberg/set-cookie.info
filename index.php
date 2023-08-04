@@ -1,3 +1,9 @@
+<?php
+	// Set cookie by sending "Set−Cookie" HTTP response header when the user submitted the corresponding POST request and when there is no XSRF:
+	if (isset($_POST["submit"]) && $_SERVER['HTTP_X_CSRF_Free'] === 'yes') {
+		header("Set−Cookie: " . $_POST["cookie"]);
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -41,14 +47,33 @@
 		</p>
 		<p>
 			Cookies the client sent in its <b>HTTP</b> request:<br/>
-			<textarea readonly style="background-color: lightgray;" id="http_cookies_textarea" rows="5" cols="100"></textarea>
+			<textarea readonly style="background-color: lightgray;" id="http_cookies_textarea" rows="5" cols="100"><?php echo getallheaders()['Cookie']; ?></textarea>
 		</p>
 		<p>
-			<form action="" method="POST">
-				Set cookie:<br/>
-				<tt>Set−Cookie: </tt><input type="text" id="cookie" name="cookie" size="100" /><br/>
-				<input type="submit" value="Set cookie!" />
-			</form>
+			Set cookie:<br/>
+			<tt>Set−Cookie: </tt><input type="text" id="cookie" size="100" /><br/>
+			<input type="submit" value="Set cookie!" onclick="
+				// adapted from https://de.wikipedia.org/wiki/XMLHttpRequest#Codebeispiele_(JavaScript):
+				let method = 'POST';
+				let url = 'http://set-cookie.info/index.php';
+				try {
+				    var xmlHttp = new XMLHttpRequest();
+				    if (xmlHttp) {
+					    xmlHttp.open(method, url, true);
+					    xmlHttp.setRequestHeader('X-CSRF-Free', 'yes');
+					    xmlHttp.onreadystatechange = function () {
+					        if (xmlHttp.readyState == 4) {
+					        	location.reload();
+					        } else {
+					        	alert('XMLHttpRequest ' + method + ' ' + url + ' failed with state: ' + xmlHttp.readyState);
+					        }
+					    };
+					    xmlHttp.send(null);
+					}
+				} catch(e) {
+				    alert('XMLHttpRequest ' + method + ' ' + url + ' failed with error: ' + e);
+				}
+			" />
 		</p>
 		<p>
 			Examples (see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">developer.mozilla.org</a> for a full reference of the <tt>Set-Cookie</tt> HTTP header):<br/>
