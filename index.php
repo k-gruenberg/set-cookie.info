@@ -55,7 +55,7 @@
 			<input type="submit" value="Set cookie!" onclick="
 				// adapted from https://de.wikipedia.org/wiki/XMLHttpRequest#Codebeispiele_(JavaScript):
 				let method = 'POST';
-				let url = 'http://set-cookie.info/index.php';
+				let url = 'index.php';
 				try {
 					var xmlHttp = new XMLHttpRequest();
 					if (xmlHttp) {
