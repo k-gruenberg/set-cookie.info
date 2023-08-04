@@ -64,8 +64,6 @@
 						xmlHttp.onreadystatechange = function () {
 							if (xmlHttp.readyState == 4) {
 								location.reload();
-							} else {
-								alert('XMLHttpRequest ' + method + ' ' + url + ' failed with state: ' + xmlHttp.readyState);
 							}
 						};
 						xmlHttp.send(null);
