@@ -57,21 +57,21 @@
 				let method = 'POST';
 				let url = 'http://set-cookie.info/index.php';
 				try {
-				    var xmlHttp = new XMLHttpRequest();
-				    if (xmlHttp) {
-					    xmlHttp.open(method, url, true);
-					    xmlHttp.setRequestHeader('X-CSRF-Free', 'yes');
-					    xmlHttp.onreadystatechange = function () {
-					        if (xmlHttp.readyState == 4) {
-					        	location.reload();
-					        } else {
-					        	alert('XMLHttpRequest ' + method + ' ' + url + ' failed with state: ' + xmlHttp.readyState);
-					        }
-					    };
-					    xmlHttp.send(null);
+					var xmlHttp = new XMLHttpRequest();
+					if (xmlHttp) {
+						xmlHttp.open(method, url, true);
+						xmlHttp.setRequestHeader('X-CSRF-Free', 'yes');
+						xmlHttp.onreadystatechange = function () {
+							if (xmlHttp.readyState == 4) {
+								location.reload();
+							} else {
+								alert('XMLHttpRequest ' + method + ' ' + url + ' failed with state: ' + xmlHttp.readyState);
+							}
+						};
+						xmlHttp.send(null);
 					}
 				} catch(e) {
-				    alert('XMLHttpRequest ' + method + ' ' + url + ' failed with error: ' + e);
+					alert('XMLHttpRequest ' + method + ' ' + url + ' failed with error: ' + e);
 				}
 			" />
 		</p>
@@ -94,7 +94,7 @@
 		<br/>
 		<br/>
 		<div class="footer" style="font-family:Arial,Helvetica,sans-serif;">
-  			<p>© 2023 Kendrick Grünberg | <a href="https://github.com/k-gruenberg/set-cookie.info">View source code</a> | See also: <a href="http://same-origin-policy.info">same-origin-policy.info</a> ; <a href="http://content-security-policy.info/">content-security-policy.info</a></p>
+			<p>© 2023 Kendrick Grünberg | <a href="https://github.com/k-gruenberg/set-cookie.info">View source code</a> | See also: <a href="http://same-origin-policy.info">same-origin-policy.info</a> ; <a href="http://content-security-policy.info/">content-security-policy.info</a></p>
 		</div>
 	</body>
 </html>
