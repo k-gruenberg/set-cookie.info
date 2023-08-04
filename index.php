@@ -61,6 +61,7 @@
 					var xmlHttp = new XMLHttpRequest();
 					if (xmlHttp) {
 						xmlHttp.open(method, url, true);
+						xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 						xmlHttp.setRequestHeader('X-CSRF-Free', 'yes');
 						xmlHttp.onreadystatechange = function () {
 							if (xmlHttp.readyState == 4) {
