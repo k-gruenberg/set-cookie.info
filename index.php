@@ -56,7 +56,7 @@
 				// adapted from https://de.wikipedia.org/wiki/XMLHttpRequest#Codebeispiele_(JavaScript):
 				let method = 'POST';
 				let url = 'index.php';
-				let params = 'cookie=' + encodeURIComponent(cookie.value);
+				let params = 'cookie=' + encodeURIComponent(document.getElementById('cookie').value); // cookie.value doesn't work here!!!
 				try {
 					var xmlHttp = new XMLHttpRequest();
 					if (xmlHttp) {
