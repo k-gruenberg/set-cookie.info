@@ -1,6 +1,6 @@
 <?php
 	// Set cookie by sending "Set−Cookie" HTTP response header when the user submitted the corresponding POST request and when there is no XSRF:
-	if (isset($_POST["cookie"])) { //&& $_SERVER['HTTP_X_CSRF_Free'] === 'yes') {
+	if (isset($_POST["cookie"]) && $_SERVER['HTTP_X_CSRF_FREE'] === 'yes') {
 		header("Set-Cookie: " . $_POST["cookie"]);
 	}
 ?>
