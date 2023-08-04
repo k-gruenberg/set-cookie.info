@@ -18,6 +18,9 @@
 	<body>
 		<h1>Play around with HTTP cookies and the Set-Cookie HTTP header:</h1>
 		<p>
+			<b>Hint:</b> Open this site in incognito/private browsing mode so that your cookie experiments can be easily reset!
+		</p>
+		<p>
 			This is: <span id="window_location"></span><br/>
 			<script>window_location.innerText = window.location;</script>
 			Visit: <script>
@@ -43,7 +46,7 @@
 		<p>
 			<form action="" method="POST">
 				Set cookie:<br/>
-				<textarea id="cookie" name="cookie" rows="5" cols="100"></textarea><br/>
+				<tt>Set−Cookie: </tt><input type="text" id="cookie" name="cookie" size="100" /><br/>
 				<input type="submit" value="Set cookie!" />
 			</form>
 		</p>
