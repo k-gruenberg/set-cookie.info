@@ -88,7 +88,7 @@
 			<ul>
 				<li><tt>Set−Cookie: FOO=BAR</tt></li>
 				<li><tt>Set−Cookie: FOO=BAR; Domain=set-cookie.info</tt><br/>
-				("Only the current domain can be set as the value, or a domain of a higher order, [...]. Setting the domain will make the cookie available to it, as well as to all its subdomains." &mdash; <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">developer.mozilla.org</a>)</li>
+				("Only the current domain can be set as the value, or a domain of a higher order, [...]. Setting the domain will make the cookie available to it, as well as to all its subdomains. If omitted, this attribute defaults to the host of the current document URL, not including subdomains. [...] but if a domain is specified, then subdomains are always included." &mdash; <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">developer.mozilla.org</a>)</li>
 				<li><tt>Set−Cookie: FOO=BAR; Path=/dir1/</tt></li>
 				<li><tt>Set−Cookie: FOO=BAR; HttpOnly</tt></li>
 				<li><tt>Set−Cookie: FOO=BAR; Max-Age=10</tt></li>
