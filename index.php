@@ -38,7 +38,15 @@
 				document.write(" | ");
 				document.write(sub2 ? "sub2.set-cookie.info" : "<a href=\"http://sub2.set-cookie.info/\">sub2.set-cookie.info</a>");
 				</script><br/>
-			Subdirectories: <a href="dir1">dir1</a> | <a href="dir2">dir2</a>
+			Subdirectories: <script>
+				let dir1 = window.location.toString().includes("dir1");
+				let dir2 = window.location.toString().includes("dir2");
+				document.write((!dir1 && !dir2) ? ".." : "<a href=\"..\">..</a>");
+				document.write(" | ");
+				document.write((dir1 || dir2) ? "dir1" : "<a href=\"dir1\">dir1</a>");
+				document.write(" | ");
+				document.write((dir1 || dir2) ? "dir2" : "<a href=\"dir2\">dir2</a>");
+				</script>
 		</p>
 		<p>
 			Cookies available through <b>JavaScript</b> (<tt>document.cookie</tt>):<br/>
